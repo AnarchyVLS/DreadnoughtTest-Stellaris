@@ -1,0 +1,41 @@
+fc_dreadnought = {
+	graphical_culture = yes
+	formation_priority = @titan_formation_priority
+	entity = "fc_dreadnought_entity"
+	max_speed = @speed_slow
+	acceleration = 0.15
+	rotation_speed = 0.1
+	collision_radius = 7
+	modifier = {
+		ship_evasion_add = 2
+	}
+	max_hitpoints = 20000
+	combat_size_multiplier = 50
+	size_multiplier = 16
+	fleet_slot_size = 8
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 0
+	is_space_station = no
+	is_space_object = no
+	icon = ship_size_military_16
+	enable_default_design = yes
+	is_designable = yes
+	prerequisites = { "tech_titans" }
+ 
+	combat_disengage_chance = 1
+ 
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+ 
+	resources = {
+		category = ships
+		cost = {
+			alloys = 1
+    	}
+	}
+}

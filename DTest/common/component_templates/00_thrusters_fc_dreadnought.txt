@@ -1,0 +1,140 @@
+		### AUTO DREADNOUGHT THRUSTERS
+
+
+
+	# 1 # Chemical Thrusters
+utility_component_template = {
+	key = "fc_dreadnought_THRUSTER_1"
+	icon = "GFX_ship_part_thruster_1"
+	icon_frame = 1
+	size = small
+
+	power = -160
+	resources = {
+		category = ship_components
+		cost = { alloys = 48 }
+	}
+
+	modifier = { }
+
+	prerequisites = { "tech_thrusters_1" }
+	component_set = "thruster_components"
+	size_restriction = { fc_dreadnought }
+	upgrades_to = "fc_dreadnought_THRUSTER_2"
+
+	ai_weight = { weight = 1 }
+}
+
+	# 2 # Ion Thrusters
+utility_component_template = {
+	key = "fc_dreadnought_THRUSTER_2"
+	icon = "GFX_ship_part_thruster_2"
+	icon_frame = 1
+	size = small
+
+	power = -240
+	resources = {
+		category = ship_components
+		cost = { alloys = 96 }
+	}
+
+	modifier = {
+		ship_speed_mult = 0.25
+		ship_evasion_add = 1
+	}
+
+	prerequisites = { "tech_thrusters_2" }
+	component_set = "thruster_components"
+	size_restriction = { fc_dreadnought }
+	upgrades_to = "fc_dreadnought_THRUSTER_3"
+
+	ai_weight = { weight = 2 }
+}
+
+	# 3 # Plasma Thrusters
+utility_component_template = {
+	key = "fc_dreadnought_THRUSTER_3"
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	size = small
+
+	power = -320
+	resources = {
+		category = ship_components
+		cost = { alloys = 144 }
+	}
+
+	modifier = {
+		ship_speed_mult = 0.50
+		ship_evasion_add = 2
+	}
+
+	prerequisites = { "tech_thrusters_3" }
+	component_set = "thruster_components"
+	size_restriction = { fc_dreadnought }
+	upgrades_to = "fc_dreadnought_THRUSTER_4"
+
+	ai_weight = { weight = 3 }
+}
+
+	# 4 # Impulse Thrusters
+utility_component_template = {
+	key = "fc_dreadnought_THRUSTER_4"
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	size = small
+
+	power = -400
+	resources = {
+		category = ship_components
+		cost = { alloys = 192 }
+	}
+
+	modifier = {
+		ship_speed_mult = 0.75
+		ship_evasion_add = 3
+	}
+
+	prerequisites = { "tech_thrusters_4" }
+	component_set = "thruster_components"
+	size_restriction = { fc_dreadnought }
+	upgrades_to = "fc_dreadnought_THRUSTER_5"
+
+	ai_weight = { weight = 4 }
+}
+
+	# 5 # Dark Matter aka Enigma Thrusters
+utility_component_template = {
+	key = "fc_dreadnought_THRUSTER_5"
+	icon = "GFX_ship_part_thruster_5"
+	icon_frame = 1
+	size = small
+
+	power = -480
+	resources = {
+		category = ship_components
+		cost = { alloys = 192		sr_dark_matter = 16 }
+	}
+
+	modifier = {
+		ship_speed_mult = 1.25
+		ship_evasion_add = 4
+	}
+
+	prerequisites = { "tech_dark_matter_propulsion" }
+	component_set = "thruster_components"
+	size_restriction = { fc_dreadnought }
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0.0
+			no_resource_for_component = { RESOURCE = sr_dark_matter }
+		}
+		modifier = {
+			factor = 0.5
+			is_ai = yes
+		}
+	}
+}
+

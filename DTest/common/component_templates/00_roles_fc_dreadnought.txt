@@ -1,0 +1,520 @@
+		### AUTO DREADNOUGHT COMPUTERS
+
+
+
+		## Default
+	# 0 #
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_DEFAULT"
+	icon = "GFX_ship_part_computer_default"
+	icon_frame = 1
+	size = small
+
+	power = -5
+	resources = {
+		category = ship_components
+		cost = { alloys = 0 }
+	}
+	ship_behavior = "artillery"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	upgrades_to = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_BASIC"
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 1 }
+}
+
+
+		## PICKET COMPUTERS
+	# 1 # Basic
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_PICKET_BASIC"
+	icon = "GFX_ship_part_computer_picket_basic"
+	icon_frame = 1
+	size = small
+
+	power = -10
+	resources = {
+		category = ship_components
+		cost = { alloys = 5 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.05
+		ship_tracking_add = 10
+	}
+	ship_behavior = "picket"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_1" }
+	upgrades_to = "COMBAT_COMPUTER_fc_dreadnought_PICKET_ADVANCED"
+	ai_tags = { screen }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 2 }
+}
+
+	# 2 # 
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_PICKET_ADVANCED"
+	icon = "GFX_ship_part_computer_picket_advanced"
+	icon_frame = 1
+	size = small
+
+	power = -15
+	resources = {
+		category = ship_components
+		cost = { alloys = 10 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.10
+		ship_tracking_add = 20
+	}
+	ship_behavior = "picket"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_2" }
+	upgrades_to = "COMBAT_COMPUTER_fc_dreadnought_PICKET_SAPIENT"
+	ai_tags = { screen }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 3 }
+}
+
+	# 3 # 
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_PICKET_SAPIENT"
+	icon = "GFX_ship_part_computer_picket_sapient"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	modifier = {
+		ship_evasion_mult = 0.10
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 30
+	}
+	ship_behavior = "picket"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_3" }
+	ai_tags = { screen }
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}
+	}
+}
+
+	# 3 # Gestalt
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_PICKET_AUTONOMOUS"
+	icon = "GFX_ship_part_computer_picket_sapient"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	modifier = {
+		ship_evasion_mult = 0.10
+	}
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 30
+	}
+	ship_behavior = "picket"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_autonomous" }
+	ai_tags = { screen }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 5 }
+}
+
+	# 3 # Precognition
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_PICKET_PRECOG"
+	icon = "GFX_ship_part_computer_picket_precog"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_tracking_add = 40
+	}
+	ship_behavior = "picket"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_precognition_interface" }
+	ai_tags = { screen }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 4 }
+}
+
+
+		## LINE COMPUTERS
+	# 1 # 
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_LINE_BASIC"
+	icon = "GFX_ship_part_computer_line_basic"
+	icon_frame = 1
+	size = small
+
+	power = -10
+	resources = {
+		category = ship_components
+		cost = { alloys = 5 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.05
+		ship_accuracy_add = 5
+	}
+	ship_behavior = "line"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_1" }
+	upgrades_to = "COMBAT_COMPUTER_fc_dreadnought_LINE_ADVANCED"
+	ai_tags = { gunship }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 2 }
+}
+
+	# 2 # 
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_LINE_ADVANCED"
+	icon = "GFX_ship_part_computer_line_advanced"
+	icon_frame = 1
+	size = small
+
+	power = -15
+	resources = {
+		category = ship_components
+		cost = { alloys = 10 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.10
+		ship_accuracy_add = 10
+	}
+	ship_behavior = "line"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_2" }
+	upgrades_to = "COMBAT_COMPUTER_AUTO_DREADNOUGHT_LINE_SAPIENT"
+	ai_tags = { gunship }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 3 }
+}
+
+	# 3 # 
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_LINE_SAPIENT"
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_accuracy_add = 20
+	}
+	ship_behavior = "line"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_3" }
+	ai_tags = { gunship }
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}
+	}
+}
+
+	# 3 # Gestalt
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_LINE_AUTONOMOUS"
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_accuracy_add = 20
+	}
+	ship_behavior = "line"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_autonomous" }
+	ai_tags = { gunship }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 5 }
+}
+
+	# 3 # Precognition
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_LINE_PRECOG"
+	icon = "GFX_ship_part_computer_line_precog"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_accuracy_add = 15
+		ship_tracking_add = 10
+	}
+	ship_behavior = "line"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_precognition_interface" }
+	ai_tags = { gunship }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 4 }
+}
+
+
+		## ARTILLERY COMPUTERS
+	# 1 # 
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_BASIC"
+	icon = "GFX_ship_part_computer_artillery_basic"
+	icon_frame = 1
+	size = small
+
+	power = -10
+	resources = {
+		category = ship_components
+		cost = { alloys = 5 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.05
+		ship_weapon_range_mult = 0.05
+	}
+	ship_behavior = "artillery"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_1" }
+	upgrades_to = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_ADVANCED"
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 2 }
+}
+
+	# 2 # 
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_ADVANCED"
+	icon = "GFX_ship_part_computer_artillery_advanced"
+	icon_frame = 1
+	size = small
+
+	power = -15
+	resources = {
+		category = ship_components
+		cost = { alloys = 10 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.10
+		ship_weapon_range_mult = 0.10
+	}
+	ship_behavior = "artillery"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_2" }
+	upgrades_to = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_SAPIENT"
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 3 }
+}
+
+	# 3 # 
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_SAPIENT"
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.20
+	}
+	ship_behavior = "artillery"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_3" }
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ai_weight = {
+		weight = 5
+		modifier = {
+			factor = 0
+			OR = {
+				has_global_flag = ghost_signal_5_flag
+				has_global_flag = ghost_signal_4_flag
+				has_global_flag = ghost_signal_3_flag
+				has_global_flag = ghost_signal_2_flag
+				has_global_flag = ghost_signal_1_flag
+			}
+		}
+	}
+}
+
+	# 3 # Gestalt
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_AUTONOMOUS"
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.20
+		ship_weapon_range_mult = 0.20
+	}
+	ship_behavior = "artillery"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_combat_computers_autonomous" }
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 5 }
+}
+
+	# 3 # Precognition
+utility_component_template = {
+	key = "COMBAT_COMPUTER_fc_dreadnought_ARTILLERY_PRECOG"
+	icon = "GFX_ship_part_computer_artillery_precog"
+	icon_frame = 1
+	size = small
+
+	power = -25
+	resources = {
+		category = ship_components
+		cost = { alloys = 20 }
+	}
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.15
+		ship_tracking_add = 10
+	}
+	ship_behavior = "artillery"
+
+	class_restriction = { shipclass_military }
+	size_restriction = { fc_dreadnought }
+	component_set = "combat_computers"
+	prerequisites = { "tech_precognition_interface" }
+	ai_tags = { artillery energy_torpedoes }
+	ai_tag_weight = 0
+
+	ai_weight = { weight = 4 }
+}
+
